@@ -1,0 +1,78 @@
+.gfg_flex {
+  display: inline-block;
+  flex-direction: row;
+  margin-right: 600px;
+  text-align: center;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.geeks {
+  position: absolute;
+  top: 290px;
+  margin: 15px 96px;
+}
+
+p {
+  background: #3dcfcf;
+  border: 1px solid #707070;
+  border-radius: 36px;
+  width: 150px;
+  margin: 20px;
+  padding: 6px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+.semester {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-left: 110px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.geeks {
+  padding-top: 10px;
+  top: 190px;
+  left: -40px;
+}
+
+.main-image {
+  position: absolute;
+  z-index: -5;
+  /* left: 360px; */
+  right: 110px;
+  top: 116px;
+}
+
+.main-image img {
+  width: 750px;
+  height: 445px;
+}
+
+#para {
+  position: absolute;
+  top: 540px;
+  right: -282px;
+  z-index: -10;
+}
+
+#para p {
+  width: 60%;
+  height: 15%;
+  color: white;
+  background: #3c4e99;
+  border-radius: 0;
+  border: 0;
+  font-size: 22px;
+  padding: 10px 26px;
+}
