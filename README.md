@@ -1,15 +1,16 @@
-# resource_website_frontend
+<h1 align = center>RESOURCE WEBSITE - FRONTEND</h1>
 A website for all college related resources from notes to question papers under one roof
 
-for frontend to run you need [backend](https://github.com/BitByte-TPC/resource_website_backend) firsrt.
-So go there and follow the steps then come back and continue
-
-for frontend we use ReactJs and bootstrap.
+for frontend to run you need [backend](https://github.com/BitByte-TPC/resource_website_backend) first.
 
 here is a look at our current progress and design for this site.
 If you have any suggestion on improvement feel free to open an issue.
 
 ![res_web_frontend](https://user-images.githubusercontent.com/50267986/95130292-f9e67780-0779-11eb-932e-d77ea9b093e1.jpeg)
+
+## Built Using
+- <img src="src/logo.svg" width="25">[React](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## Installation
 
