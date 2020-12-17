@@ -1,7 +1,47 @@
-<h1 align = center>RESOURCE WEBSITE - FRONTEND</h1>
+<h1 align = center>RESOURCE WEBSITE</h1>
 A website for all college related resources from notes to question papers under one roof
 
-for frontend to run you need [backend](https://github.com/BitByte-TPC/resource_website_backend) first.
+# resource_website_backend
+
+The backend of this website uses nodejs and express.
+We use mongodb for DBMS and multiple validation schema and techniques for authentication
+
+## Installation
+
+Installation requires npm and mogodb (mogodb must be run using mongo daemon)
+
+after cloning into repo enter the repo using
+
+``` bash
+cd resource_website
+```
+
+then just type command
+
+```bash
+cd backend
+npm install
+```
+ this command will automatically install all the JS related requirements for server
+ 
+You also need to have mongodb installed in your system
+for that you can just go to [mongodb's official site](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and follow the instruction
+
+after that just use command
+```bash
+sudo mongod
+```
+in another terminal again go to the resource_website_backend folder and just type command
+```bash
+export iiit_jwtPrivateKey=<Private key value>
+node index.js
+```
+to start your server at https://3001/api
+
+# resource_website_backend
+
+we use reactjs for frontend
+for frontend to run you need backend first as given above.
 
 here is a look at our current progress and design for this site.
 If you have any suggestion on improvement feel free to open an issue.
@@ -20,6 +60,7 @@ just open another terminal window and clone and enter the repo.
 after that type command
 
 ```bash
+cd frontend
 npm install
 ```
 to download all the dependencies.
