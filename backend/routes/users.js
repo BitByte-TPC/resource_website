@@ -11,7 +11,6 @@ router.get("/me", auth, async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log("call4");
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -24,7 +23,6 @@ router.post("/", async (req, res) => {
   await user.save();
 
   const token = user.generateAuthToken();
-  console.log("sending");
   res
     .header("x-auth-token", token)
     .header("access-control-expose-headers", "x-auth-token")
