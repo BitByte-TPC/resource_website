@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useEffect } from "react";
 import NavBar from "./commponents/navBar";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Home from "./commponents/home";
@@ -98,6 +98,15 @@ function App(){
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isModalOpen2, setIsModalOpen2] = useState(false)
   const [user, setUser] = useState(null)
+
+  useEffect(() => {
+       try {
+         const jwt = localStorage.getItem("token");
+         const user = jwtDecode(jwt);
+         setUser(user);
+       } 
+       catch (ex) {}
+  }, []);
 
   const handleLogin = async (data) => {
     //server side part using axios
