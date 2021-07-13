@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -12,13 +12,9 @@ import {
 import LoginForm from "./loginForm";
 import RegisterForm from "./registerForm";
 
-class NavBar extends Component {
-  state = {
-    errors: null,
-  };
+function NavBar(props){
 
-  render() {
-    return (
+  return (
       <React.Fragment>
         <Navbar className="bg-li" expand>
           <Nav className="ml-0" navbar>
@@ -38,44 +34,47 @@ class NavBar extends Component {
             </NavItem>
           </Nav>
           <Nav className="ml-auto" navbar>
-            {!this.props.user && (
-              <React.Fragment>
-                <NavItem>
-                  <button onClick={this.props.onClose} className="but">
-                    Log in
-                  </button>
-                </NavItem>
-                <NavItem>
-                  <button
-                    onClick={this.props.onRegister}
-                    className="btn btn-info"
-                  >
-                    Sign up
-                  </button>
-                </NavItem>
-              </React.Fragment>
-            )}
-            {this.props.user && (
-              <React.Fragment>
-                <NavItem>
-                  <Link className="nav-link br" to="/user">
-                    <span className="fa fa-user-circle-o"></span>{" "}
-                    {this.props.user.name}
-                  </Link>
-                </NavItem>
-                <div className="or">|</div>
-                <NavItem>
-                  <button className="but" onClick={this.props.onLogOut}>
-                    <span className="fa fa-sign-out"></span> Sign-out
-                  </button>
-                </NavItem>
-              </React.Fragment>
-            )}
+            {props.user ? 
+                (
+                  <React.Fragment>
+                    <NavItem>
+                      <Link className="nav-link br" to="/user">
+                        <span className="fa fa-user-circle-o"></span>{" "}
+                        {props.user.name}
+                      </Link>
+                    </NavItem>
+                    <div className="or">|</div>
+                    <NavItem>
+                      <button className="but" onClick={props.onLogOut}>
+                        <span className="fa fa-sign-out"></span> Sign-out
+                      </button>
+                    </NavItem>
+                  </React.Fragment>
+                )
+              :
+                (
+                  <React.Fragment>
+                    <NavItem>
+                      <button onClick={props.onClose} className="but">
+                        Log in
+                      </button>
+                    </NavItem>
+                    <NavItem>
+                      <button
+                        onClick={props.onRegister}
+                        className="btn btn-info"
+                      >
+                        Sign up
+                      </button>
+                    </NavItem>
+                  </React.Fragment>
+                )
+            }
           </Nav>
         </Navbar>
         {/* login part */}
-        <Modal isOpen={this.props.isModal} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>
+        <Modal isOpen={props.isModal} toggle={props.toggleModal}>
+          <ModalHeader toggle={props.toggleModal}>
             <div>
               Login
               <button
@@ -83,19 +82,19 @@ class NavBar extends Component {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={this.props.onClose}
+                onClick={props.onClose}
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
           </ModalHeader>
           <ModalBody>
-            <LoginForm onLogin={this.props.onLogin} />
+            <LoginForm onLogin={props.onLogin} />
           </ModalBody>
         </Modal>
         {/* register part */}
-        <Modal isOpen={this.props.isModal2} toggle={this.toggleModal2}>
-          <ModalHeader toggle={this.toggleModal2}>
+        <Modal isOpen={props.isModal2} toggle={props.toggleModal2}>
+          <ModalHeader toggle={props.toggleModal2}>
             <div>
               Register
               <button
@@ -103,19 +102,18 @@ class NavBar extends Component {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={this.props.onClose2}
+                onClick={props.onClose2}
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
           </ModalHeader>
           <ModalBody>
-            <RegisterForm onRegister={this.props.onRegister} />
+            <RegisterForm onRegister={props.onRegister} />
           </ModalBody>
         </Modal>
       </React.Fragment>
-    );
-  }
+    )
 }
 
 export default NavBar;
