@@ -15,9 +15,8 @@ function Semester(props){
   };
 
   return (
-    <button className="btn btn-info cust-btn">
-      {props.year}
-      {renderSuffix()} year
+    <button className="priButton yrButton">
+      {props.year}{renderSuffix()} year
     </button>
   )
 }
