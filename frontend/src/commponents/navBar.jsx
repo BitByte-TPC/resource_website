@@ -16,25 +16,12 @@ function NavBar(props){
 
   return (
       <React.Fragment>
-        <Navbar className="bg-li" expand>
-          <Nav className="ml-0" navbar>
-            <NavbarBrand className="brand" href="/home">
-              IIITDMJ PORTAL
-            </NavbarBrand>
-            <NavItem>
-              <button className="but">
-                <span className="fa fa-search"></span> Search
-              </button>
-            </NavItem>
-            <div className="or">|</div>
-            <NavItem>
-              <Link className="nav-link br" to="/aboutus">
-                <span className="fa fa-info"></span> About
-              </Link>
-            </NavItem>
-          </Nav>
-          <Nav className="ml-auto" navbar>
-            {props.user ? 
+
+        {/*Navbar*/}
+        <div className="navbarr">
+          <div className="brand">IIITDMJ <nobr className="hide">PORTAL</nobr></div>
+          <div className="navButton">
+          {props.user ? 
                 (
                   <React.Fragment>
                     <NavItem>
@@ -45,33 +32,33 @@ function NavBar(props){
                     </NavItem>
                     <div className="or">|</div>
                     <NavItem>
-                      <button className="but" onClick={props.onLogOut}>
+                      <button className="secButton" onClick={props.onLogOut}>
                         <span className="fa fa-sign-out"></span> Sign-out
                       </button>
                     </NavItem>
                   </React.Fragment>
                 )
-              :
-                (
-                  <React.Fragment>
-                    <NavItem>
-                      <button onClick={props.onClose} className="but">
-                        Log in
-                      </button>
-                    </NavItem>
-                    <NavItem>
-                      <button
-                        onClick={props.onRegister}
-                        className="btn btn-info"
-                      >
-                        Sign up
-                      </button>
-                    </NavItem>
-                  </React.Fragment>
+              :(
+                <>
+                  <button 
+                    onClick={props.onClose} 
+                    className="secButton"
+                  >
+                    Log in
+                  </button>
+
+                  <button
+                    onClick={props.onRegister}
+                    className="priButton"
+                  >
+                    Sign up
+                  </button>
+                </>
                 )
             }
-          </Nav>
-        </Navbar>
+          </div>  
+        </div>
+      
         {/* login part */}
         <Modal isOpen={props.isModal} toggle={props.toggleModal}>
           <ModalHeader toggle={props.toggleModal}>
@@ -92,6 +79,7 @@ function NavBar(props){
             <LoginForm onLogin={props.onLogin} />
           </ModalBody>
         </Modal>
+        
         {/* register part */}
         <Modal isOpen={props.isModal2} toggle={props.toggleModal2}>
           <ModalHeader toggle={props.toggleModal2}>
