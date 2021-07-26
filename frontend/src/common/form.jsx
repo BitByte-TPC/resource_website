@@ -48,7 +48,7 @@ class Form extends Component {
   };
 
   renderButton(label) {
-    return <button className="btn l1">{label}</button>;
+    return <center><button className="priButton">{label}</button></center>;
   }
 
   renderInput(name, label, type = "text") {
