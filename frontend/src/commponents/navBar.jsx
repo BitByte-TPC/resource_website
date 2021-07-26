@@ -23,20 +23,16 @@ function NavBar(props){
           <div className="navButton">
           {props.user ? 
                 (
-                  <React.Fragment>
-                    <NavItem>
-                      <Link className="nav-link br" to="/user">
+                  <>
+                      <div className="secButton" to="/user">
                         <span className="fa fa-user-circle-o"></span>{" "}
                         {props.user.name}
-                      </Link>
-                    </NavItem>
-                    <div className="or">|</div>
-                    <NavItem>
+                      </div>
+
                       <button className="secButton" onClick={props.onLogOut}>
                         <span className="fa fa-sign-out"></span> Sign-out
                       </button>
-                    </NavItem>
-                  </React.Fragment>
+                  </>
                 )
               :(
                 <>
@@ -48,7 +44,7 @@ function NavBar(props){
                   </button>
 
                   <button
-                    onClick={props.onRegister}
+                    onClick={props.onClose2}
                     className="priButton"
                   >
                     Sign up
