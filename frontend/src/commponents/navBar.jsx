@@ -37,14 +37,14 @@ function NavBar(props){
               :(
                 <>
                   <button 
-                    onClick={props.onClose} 
+                    onClick={props.toggleModal} 
                     className="secButton"
                   >
                     Log in
                   </button>
 
                   <button
-                    onClick={props.onClose2}
+                    onClick={props.toggleModal2}
                     className="priButton"
                   >
                     Sign up
@@ -60,15 +60,6 @@ function NavBar(props){
           <ModalHeader toggle={props.toggleModal}>
             <div>
               Login
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={props.onClose}
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
           </ModalHeader>
           <ModalBody>
@@ -81,15 +72,6 @@ function NavBar(props){
           <ModalHeader toggle={props.toggleModal2}>
             <div>
               Register
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={props.onClose2}
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
           </ModalHeader>
           <ModalBody>

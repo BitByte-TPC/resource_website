@@ -26,7 +26,7 @@ code {
 .brand{
   color: white;
   font-size: 30px;
-  margin: 0px 30px;
+  margin: 0px 15px;
 }
 
 .navButton{
@@ -85,6 +85,107 @@ code {
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
   margin: 40px 0 0 30px;
+}
+
+.yrButton{
+  border-radius: 1rem;
+  padding: 20%  0px;
+}
+
+@media (max-width: 768px){
+  .content{
+    flex:  1;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .details{
+    flex: 0 0 50%;
+  }
+
+  .heading{
+    font-size: 35px;
+  }
+
+  .yrButton{
+    padding:  28px;
+  }
+
+  .image{
+    display: none;
+  }
+}
+
+@media (max-width:  576px){
+  .content{
+    flex-direction: column;
+  }
+
+  .subheading{
+    font-size: 16px;
+  }
+}
+
+@media (max-width:  480px){
+  .hide{
+    display: none;
+  }
+
+  .heading{
+    font-size: 28px;
+  }
+}
+
+/*----- Forms -----*/
+.formInput{
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #ced4da;
+}
+
+.formInput:focus{
+  box-shadow: none;
+}
+
+.error{
+  color:  #721c24;
+  margin:  6px 0px;
+=======
+}
+
+/*----- Home -----*/
+.home{
+  display: flex;
+  color: white;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%;
+  margin: 0% 3%;
+}
+
+.img{
+  width: 100%;
+}
+
+.heading {
+  font-size: 45px;
+  margin: 30px 15px;
+}
+
+.subheading {
+  font-size: 20px;
+  margin: 15px;
+}
+
+/*----- Year Windows -----*/
+.year{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  margin: 40px 15px 0 15px;
 }
 
 .yrButton{
