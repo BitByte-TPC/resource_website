@@ -23,32 +23,27 @@ function NavBar(props){
           <div className="navButton">
           {props.user ? 
                 (
-                  <React.Fragment>
-                    <NavItem>
-                      <Link className="nav-link br" to="/user">
-                        <span className="fa fa-user-circle-o"></span>{" "}
-                        {props.user.name}
-                      </Link>
-                    </NavItem>
-                    <div className="or">|</div>
-                    <NavItem>
-                      <button className="secButton" onClick={props.onLogOut}>
-                        <span className="fa fa-sign-out"></span> Sign-out
-                      </button>
-                    </NavItem>
-                  </React.Fragment>
+                  <>
+                   <div className="secButton" to="/user">
+                      <span className="fa fa-user-circle-o"></span>{" "}
+                      {props.user.name}
+                    </div>
+                    <button className="secButton" onClick={props.onLogOut}>
+                      <span className="fa fa-sign-out"></span> Sign-out
+                    </button>
+                  </>
                 )
               :(
                 <>
                   <button 
-                    onClick={props.onClose} 
+                    onClick={props.toggleModal} 
                     className="secButton"
                   >
                     Log in
                   </button>
 
                   <button
-                    onClick={props.onRegister}
+                    onClick={props.toggleModal2}
                     className="priButton"
                   >
                     Sign up
@@ -64,15 +59,6 @@ function NavBar(props){
           <ModalHeader toggle={props.toggleModal}>
             <div>
               Login
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={props.onClose}
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
           </ModalHeader>
           <ModalBody>
@@ -85,15 +71,6 @@ function NavBar(props){
           <ModalHeader toggle={props.toggleModal2}>
             <div>
               Register
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={props.onClose2}
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
           </ModalHeader>
           <ModalBody>

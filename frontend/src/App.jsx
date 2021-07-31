@@ -83,8 +83,8 @@ function App(){
           onRegister={handleRegister}
           isModal={isModalOpen}
           isModal2={isModalOpen2}
-          onClose={handleClose}
-          onClose2={handleClose2}
+          toggleModal={handleClose}
+          toggleModal2={handleClose2}
           onLogOut={handleLogOut}
         />
         <Switch>
