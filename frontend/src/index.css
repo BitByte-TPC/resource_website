@@ -92,6 +92,22 @@ code {
   padding: 20%  0px;
 }
 
+/*----- Forms -----*/
+.formInput{
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #ced4da;
+}
+
+.formInput:focus{
+  box-shadow: none;
+}
+
+.error{
+  color:  #721c24;
+  margin:  6px 0px;
+}
+
 @media (max-width: 768px){
   .content{
     flex:  1;
