@@ -3,6 +3,7 @@ const app = express();
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const course = require("./routes/course");
+const resource  = require("./routes/resource");
 const config = require("config");
 const mongoose = require("mongoose");
 
@@ -28,6 +29,7 @@ app.use(allowCrossDomain);
 app.use("/api/user", users);
 app.use("/api/auth", auth);
 app.use("/api/course", course);
+app.use("/api/resource", resource);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`listening on port ${port}`));
